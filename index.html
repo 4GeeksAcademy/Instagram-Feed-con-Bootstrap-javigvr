@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed with Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/072e5df971.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        .nav-pill .nav-link {
+            color: #6c757d;
+        }
+
+        .nav-pill .nav-link.active {
+            color: #ff4500;
+        }
+
+        .grid img {
+            object-fit: cover;
+            width: 100%;
+            height: 25vw;
+        }
+
+        .card img {
+            object-fit: cover;
+        }
+
+        .btn-success {
+            background-color: #ff4500;
+            border-color: #ff4500;
+        }
+
+        .btn-success:hover {
+            background-color: #ff6347;
+            border-color: #ff6347;
+        }
+
+        .dropdown-menu {
+            background-color: #f8f9fa;
+        }
+
+        .post-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+        }
+
+        .post-footer i {
+            cursor: pointer;
+        }
+        .img-container{
+            width: 500px;
+            height:  500px;
+            overflow: hidden;
+            
+        }
+        .img-container img{ 
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+    </style>
+    <nav class="navbar navbar-light bg-light py-3">
+        <div class="container-fluid">
+            <div class="d-flex w-100 justify-content-between">
+                <div>
+                    <i class="fa-brands fa-instagram fa-xl text-danger"></i>
+                    <h5 class="d-inline-block fs-5">Instagram</h5>
+                </div>
+                <div class="d-flex align-right justify-content-end">
+                    <button type="button" class="btn btn-success me-2" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Create a new post
+                    </button>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-gear"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Caption:</h6>
+                    <textarea class="form-control" placeholder="Add the caption of your post here"
+                        id="floatingTextarea2"></textarea>
+                    <div class="row p-2">
+                        <button class="col-1 border rounded p-1 m-1 btn-light">
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+                        <button class="col-1 border rounded p-1 m-1 btn-light">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-2">
+        <ul class="nav nav-pill justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                    role="tab" aria-controls="home" aria-selected="true"><i class="fa-solid fa-table-cells"></i></a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                    role="tab" aria-controls="profile" aria-selected="false"><i class="fa-solid fa-square"></i></a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active overflow-hidden" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div class="container-fluid p-0 m-0">
+                    <div class="row my-2">
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.blogs.es/0ca9a6/aa/1366_2000.webp" class="img-fluid " alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.blogs.es/978156/1-j5w9opqskeinsi_1pphlsg/1366_2000.webp" class="img-fluid" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://bcw-media.s3.ap-northeast-1.amazonaws.com/text_to_image_v6_poster_01_f038887d26.jpg" class="img-fluid" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/474x/fb/ec/9a/fbec9ac75f784624b5957cf271dfdc81.jpg" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/474x/d9/4a/b8/d94ab8f621436edc68f91be228365ae9.jpg" class="img-fluid" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/236x/06/18/18/06181855cde0844504d2e5598410d696.jpg" class="img-fluid" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/236x/77/e4/ec/77e4ec42ea7571fedc4530b1be72ed8b.jpg" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/236x/44/7d/52/447d52b1712944aa2e3d9395ca68a375.jpg" class="img-fluid" alt=""></div></div>
+                        <div class="col-6 col-md-4 px-1"><div class="img-container"><img src="https://i.pinimg.com/236x/10/db/3c/10db3c12c9868ef5c99fd7025392288f.jpg" class="img-fluid" alt=""></div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade overflow-hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.blogs.es/0ca9a6/aa/1366_2000.webp" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.blogs.es/978156/1-j5w9opqskeinsi_1pphlsg/1366_2000.webp" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://bcw-media.s3.ap-northeast-1.amazonaws.com/text_to_image_v6_poster_01_f038887d26.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/474x/fb/ec/9a/fbec9ac75f784624b5957cf271dfdc81.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/474x/d9/4a/b8/d94ab8f621436edc68f91be228365ae9.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/236x/06/18/18/06181855cde0844504d2e5598410d696.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/236x/77/e4/ec/77e4ec42ea7571fedc4530b1be72ed8b.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/236x/44/7d/52/447d52b1712944aa2e3d9395ca68a375.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 mx-auto border rounded p-0">
+                        <div class="d-flex p-2">
+                            <div class="w-100 fs-4">Post Title</div>
+                            <small>Date</small>
+                        </div>
+                        <img src="https://i.pinimg.com/236x/10/db/3c/10db3c12c9868ef5c99fd7025392288f.jpg" class="img-fluid w-100 col-12" alt="" />
+                        <div class="p-2">
+                            <strong>Likes</strong>
+                            <p>la descripcion de esta bellisima foto es esta</p>
+                        </div>
+                        <div class="post-footer">
+                            <div>
+                                <i class="fa-solid fa-heart me-3"></i>
+                                <i class="fa-solid fa-comment me-3"></i>
+                                <i class="fa-solid fa-share"></i>
+                            </div>
+                            <i class="fa-solid fa-bookmark"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
